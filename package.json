@@ -1,0 +1,22 @@
+{
+  "name": "@0xgasless/agentkit-example",
+  "description": "0xgasless Agentkit Node.js SDK Chatbot Example",
+  "version": "1.0.0",
+  "author": "Permissionless Puter",
+  "license": "MIT",
+  "scripts": {
+    "lint": "biome lint --write .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "@0xgasless/agentkit": "latest",
+    "@langchain/langgraph": "^0.2.21",
+    "@langchain/openai": "^0.3.14",
+    "@langchain/core": "^0.3.19",
+    "dotenv": "^16.4.5",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}
