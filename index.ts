@@ -8,7 +8,7 @@ import * as dotenv from "dotenv";
 import * as readline from "readline";
 
 dotenv.config();
-
+//environment initials
 function validateEnvironment(): void {
   const missingVars: string[] = [];
 
@@ -38,7 +38,7 @@ validateEnvironment();
 async function initializeAgent() {
   try {
     const llm = new ChatOpenAI({
-      model: "gpt-4o",
+      model: "gpt-4o-mini",
       openAIApiKey: process.env.OPENROUTER_API_KEY,
       configuration: {
         baseURL: "https://openrouter.ai/api/v1",
@@ -48,7 +48,7 @@ async function initializeAgent() {
     // Initialize 0xGasless AgentKit
     const agentkit = await Agentkit.configureWithWallet({
       privateKey: process.env.PRIVATE_KEY as `0x${string}`,
-      rpcUrl: process.env.RPC_URL,
+      rpcUrl: process.env.RPC_URL as string,
       apiKey: process.env.API_KEY as string,
       chainID: Number(process.env.CHAIN_ID) || 8453, // Base Sepolia
     });
